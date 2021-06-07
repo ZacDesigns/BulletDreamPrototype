@@ -4,32 +4,34 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Rigidbody rigBod;
+
+    [HideInInspector]
+    public bool isDead;
+
+    public float moveSpeed = 6;
     void Start()
     {
-        
+        rigBod = GetComponent<Rigidbody>();
+        isDead = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.position = transform.position + new Vector3(0, 0, 0.1f);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.position = transform.position + new Vector3(0, 0, -0.1f);
-        }
+        //inputs
+        float x = Input.GetAxisRaw("Horizontal") * moveSpeed;
+        float y = Input.GetAxisRaw("Vertical") * moveSpeed;
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position = transform.position + new Vector3(0.1f, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position = transform.position + new Vector3(-0.1f, 0, 0);
-        }
+        //movement
+        Vector3 movePos = transform.right * x + transform.forward * y;
+        Vector3 newMovePos = new Vector3(movePos.x, rigBod.velocity.y, movePos.z);
+
+        rigBod.velocity = newMovePos;
+
+
 
     }
+
+
+
 }
