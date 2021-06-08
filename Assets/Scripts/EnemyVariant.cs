@@ -24,7 +24,7 @@ public class EnemyVariant : MonoBehaviour
         {
             Debug.Log("Player Dead!!");
         }
-        if (other.tag == "PlayerProjectile")
+        if (other.tag == "Player Projectile")
         {
             Destroy(gameObject);
         }

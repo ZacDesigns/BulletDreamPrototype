@@ -6,15 +6,43 @@ public class PlayerWeapon : MonoBehaviour
 {
     public GameObject projectileObject;
 
+    public float rateOfFire;
+    private float timePassed;
+    private bool ableShoot;
 
 
     void Start()
     {
-        
+        ableShoot = true;
+        timePassed = 0.0f;
     }
 
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            Shoot();
+            ableShoot = false;
+            timePassed = 0.0f;
+        }
+
+        timePassed += Time.deltaTime;
+
+        if (timePassed >= rateOfFire)
+        {
+            ableShoot = true;
+        }
+
     }
+
+    private void Shoot()
+    {
+        if (!transform.root.GetComponent<PlayerController>().isDead)
+        {
+            Instantiate(projectileObject, transform.position, transform.rotation);
+        }
+    }
+
+
+
 }

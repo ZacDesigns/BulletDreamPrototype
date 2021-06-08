@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1691746849950547002}
   - component: {fileID: 679393311596906583}
   - component: {fileID: 5578754455710634981}
+  - component: {fileID: 1812908727}
   m_Layer: 0
   m_Name: Enemy Standard
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,3 +97,16 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1812908727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5809533404863176910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb60f5b595f2624439796cd32406f830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
