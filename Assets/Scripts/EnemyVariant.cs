@@ -23,10 +23,11 @@ public class EnemyVariant : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("Player Dead!!");
+
         }
         if (other.tag == "Player Projectile")
         {
-            Destroy(gameObject);
+            Kill();
         }
     }
 

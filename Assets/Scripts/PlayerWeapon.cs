@@ -11,7 +11,7 @@ public class PlayerWeapon : MonoBehaviour
     private bool ableShoot;
 
 
-    void Start()
+    private void Start()
     {
         ableShoot = true;
         timePassed = 0.0f;
@@ -19,7 +19,7 @@ public class PlayerWeapon : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && ableShoot == true)
         {
             Shoot();
             ableShoot = false;

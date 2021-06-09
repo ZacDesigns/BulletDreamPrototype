@@ -9,11 +9,13 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool isDead;
 
+
     public float moveSpeed = 6;
     void Start()
     {
         rigBod = GetComponent<Rigidbody>();
         isDead = false;
+
     }
 
     void Update()
