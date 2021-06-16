@@ -33,7 +33,8 @@ public class EnemyVariant : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("Player Dead!!");
-    
+            other.gameObject.GetComponent<PlayerController>().isDead = true;
+
         }
         if (other.tag == "Player Projectile")
         {

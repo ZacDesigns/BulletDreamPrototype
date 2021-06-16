@@ -20,18 +20,18 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //inputs
-        float x = Input.GetAxisRaw("Horizontal") * moveSpeed;
-        float y = Input.GetAxisRaw("Vertical") * moveSpeed;
+        if (!transform.root.GetComponent<PlayerController>().isDead)
+        {
+            //inputs
+            float x = Input.GetAxisRaw("Horizontal") * moveSpeed;
+            float y = Input.GetAxisRaw("Vertical") * moveSpeed;
 
-        //movement
-        Vector3 movePos = transform.right * x + transform.forward * y;
-        Vector3 newMovePos = new Vector3(movePos.x, rigBod.velocity.y, movePos.z);
+            //movement
+            Vector3 movePos = transform.right * x + transform.forward * y;
+            Vector3 newMovePos = new Vector3(movePos.x, rigBod.velocity.y, movePos.z);
 
-        rigBod.velocity = newMovePos;
-
-
-
+            rigBod.velocity = newMovePos;
+        }
     }
 
 
@@ -40,8 +40,9 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Enemy")
         {
             Debug.Log("Player Dead!!");
-
+            isDead = true;
         }
+
     }
 
 
