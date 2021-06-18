@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
+    private PauseMenuController pauseController;
+
+
 
     public float mouseSensitivity = 10f;
     public Transform player;
@@ -13,6 +16,7 @@ public class PlayerCamera : MonoBehaviour
 
     void Start()
     {
+        pauseController = GameObject.Find("Canvas").GetComponent<PauseMenuController>();
         //Remove cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -21,16 +25,19 @@ public class PlayerCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Mouse look 
-        x += -Input.GetAxis("Mouse Y") * mouseSensitivity;
-        y += Input.GetAxis("Mouse X") * mouseSensitivity;
+       if (pauseController.isPaused == false)
+        {
+            //Mouse look 
+            x += -Input.GetAxis("Mouse Y") * mouseSensitivity;
+            y += Input.GetAxis("Mouse X") * mouseSensitivity;
 
-        //MathfClamp
-        x = Mathf.Clamp(x, -90, 90);
+            //MathfClamp
+            x = Mathf.Clamp(x, -90, 90);
 
-        //rotations
-        transform.localRotation = Quaternion.Euler(x, 0, 0);
-        player.transform.localRotation = Quaternion.Euler(0, y, 0);
+            //rotations
+            transform.localRotation = Quaternion.Euler(x, 0, 0);
+            player.transform.localRotation = Quaternion.Euler(0, y, 0);
+        }
     }
 
 

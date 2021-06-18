@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody rigBod;
 
+    public GameOverController GameOverScreen;
     [HideInInspector]
     public bool isDead;
 
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 6;
     void Start()
     {
+        GameOverScreen = GetComponent<GameOverController>();
         rigBod = GetComponent<Rigidbody>();
         isDead = false;
 
