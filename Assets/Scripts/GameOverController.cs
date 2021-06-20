@@ -9,7 +9,6 @@ public class GameOverController : MonoBehaviour
 
     void Start()
     {
-        playerControl = GetComponent<PlayerController>();
         gameObject.SetActive(false);
         Time.timeScale = 1f;
     }
@@ -23,6 +22,7 @@ public class GameOverController : MonoBehaviour
 
     void Update()
     {
+        playerControl = GetComponent<PlayerController>();
         if (playerControl.isDead == true)
         {
             Debug.Log("Game Over");

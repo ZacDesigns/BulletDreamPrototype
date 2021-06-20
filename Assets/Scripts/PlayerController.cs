@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody rigBod;
 
-    public GameOverController GameOverScreen;
+    private GameOverController GameOverScreen;
     [HideInInspector]
     public bool isDead;
 
