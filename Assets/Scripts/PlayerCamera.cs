@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
     private PauseMenuController pauseController;
+    private PlayerController playerController;
 
 
 
@@ -17,6 +18,7 @@ public class PlayerCamera : MonoBehaviour
     void Start()
     {
         pauseController = GameObject.Find("Canvas").GetComponent<PauseMenuController>();
+
         //Remove cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -25,7 +27,8 @@ public class PlayerCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (pauseController.isPaused == false)
+        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+       if (!PauseMenuController.isPaused && !GameManager.gameIsOver)
         {
             //Mouse look 
             x += -Input.GetAxis("Mouse Y") * mouseSensitivity;
@@ -37,6 +40,7 @@ public class PlayerCamera : MonoBehaviour
             //rotations
             transform.localRotation = Quaternion.Euler(x, 0, 0);
             player.transform.localRotation = Quaternion.Euler(0, y, 0);
+
         }
     }
 

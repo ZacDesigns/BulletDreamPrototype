@@ -6,8 +6,11 @@ public class PauseMenuController : MonoBehaviour
 {
     public GameObject pauseScreen;
 
+    public GameManager gameManager;
+    public PlayerController playerController;
+
     [HideInInspector]
-    public bool isPaused = false;
+    public static bool isPaused = false;
 
     void Start()
     {
@@ -17,15 +20,18 @@ public class PauseMenuController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (GameManager.gameIsOver == false)
         {
-            if (isPaused)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Resume();
-            }
-            else
-            {
-                Pause();
+                if (isPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
             }
         }
     }

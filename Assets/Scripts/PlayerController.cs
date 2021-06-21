@@ -6,15 +6,15 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody rigBod;
 
-    private GameOverController GameOverScreen;
     [HideInInspector]
     public bool isDead;
+
+    public GameManager gameManager;
 
 
     public float moveSpeed = 6;
     void Start()
     {
-        GameOverScreen = GetComponent<GameOverController>();
         rigBod = GetComponent<Rigidbody>();
         isDead = false;
 
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            Debug.Log("Player Dead!!");
+            FindObjectOfType<GameManager>().GameOver();
             isDead = true;
         }
 

@@ -19,7 +19,7 @@ public class PlayerWeapon : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && ableShoot == true)
+        if (Input.GetMouseButtonDown(0) && ableShoot == true && !PauseMenuController.isPaused)
         {
             Shoot();
             ableShoot = false;

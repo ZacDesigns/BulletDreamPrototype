@@ -19,16 +19,23 @@ public class Timer : MonoBehaviour
     }
 
 
+    public void timerCount()
+    {
+        if (!GameManager.gameIsOver)
+        {
+            float timeCont = Time.time - startTimer;
+
+            string minutes = ((int)timeCont / 60).ToString();
+            string seconds = (timeCont % 60).ToString("f2");
+
+            textTimer.text = "Timer: " + minutes + ":" + seconds;
+        }
+    }
+
+
+
     void Update()
     {
-        float timeCont = Time.time - startTimer;
-
-        string minutes = ((int)timeCont / 60).ToString();
-        string seconds = (timeCont % 60).ToString("f2");
-
-        textTimer.text = minutes + ":" + seconds;
-
-
-
+        timerCount();
     }
 }

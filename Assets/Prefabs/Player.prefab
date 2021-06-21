@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileObject: {fileID: 6425023590724338640, guid: f6afdfeaae5004a439db97c716bad618, type: 3}
-  rateOfFire: 0.5
+  rateOfFire: 0.03
 --- !u!1 &891630477
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileObject: {fileID: 6425023590724338640, guid: f6afdfeaae5004a439db97c716bad618, type: 3}
-  rateOfFire: 0.5
+  rateOfFire: 0.03
 --- !u!1 &1856800744
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileObject: {fileID: 6425023590724338640, guid: f6afdfeaae5004a439db97c716bad618, type: 3}
-  rateOfFire: 0.5
+  rateOfFire: 0.03
 --- !u!1 &3696965904390048536
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,6 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
+  gameManager: {fileID: 0}
   moveSpeed: 6
 --- !u!1 &8196800504327063352
 GameObject:
@@ -394,7 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb298841c8a2764383f826fea155767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 10
+  mouseSensitivity: 4
   player: {fileID: 8196800503587833256}
 --- !u!1 &8196800505000318860
 GameObject:
@@ -408,6 +409,7 @@ GameObject:
   - component: {fileID: 8196800505000318857}
   - component: {fileID: 8196800505000318862}
   - component: {fileID: 8196800505000318863}
+  - component: {fileID: 1924710028}
   m_Layer: 0
   m_Name: PlayerBody
   m_TagString: Untagged
@@ -487,6 +489,20 @@ CapsuleCollider:
   m_GameObject: {fileID: 8196800505000318860}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &1924710028
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196800505000318860}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2

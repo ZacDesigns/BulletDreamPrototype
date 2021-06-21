@@ -21,33 +21,26 @@ public class EnemyVariant : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) < playerDetected)
+        if (GameManager.gameIsOver == false)
         {
-            navAgent.destination = player.transform.position;
+            if (Vector3.Distance(transform.position, player.transform.position) < playerDetected)
+            {
+                navAgent.destination = player.transform.position;
+            }
         }
-        //transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
-        {
-            Debug.Log("Player Dead!!");
-            other.gameObject.GetComponent<PlayerController>().isDead = true;
 
-        }
-        if (other.tag == "Player Projectile")
+        if (other.tag == "Player Projectile" && GameManager.gameIsOver == false)
         {
             Kill();
         }
     }
-
-
-
     public void Kill()
     {
         Destroy(gameObject);
+        Score.scoreVal += 5;
     }
-
-
 }

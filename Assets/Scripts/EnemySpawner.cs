@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if (canSpawn)
+        if (canSpawn && !GameManager.gameIsOver)
         {
             SpawnEnemy();
             canSpawn = false;

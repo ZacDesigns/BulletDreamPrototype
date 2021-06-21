@@ -13,6 +13,9 @@ public class ReturnMenu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
+        Score.scoreVal = 0;
+        PauseMenuController.isPaused = false;
+        GameManager.gameIsOver = false;
     }
 
 
