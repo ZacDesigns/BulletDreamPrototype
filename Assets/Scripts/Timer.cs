@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-
+    public static string timerValue;
     public Text textTimer;
+    public Text textGameOver;
     private float startTimer;
 
 
@@ -14,7 +15,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         startTimer = Time.time;
-
+        textTimer = GetComponent<Text>();
 
     }
 
@@ -30,6 +31,9 @@ public class Timer : MonoBehaviour
 
             textTimer.text = "Timer: " + minutes + ":" + seconds;
         }
+        timerValue = textTimer.GetComponent<Text>().text;
+        textGameOver.GetComponent<Text>().text = timerValue;
+
     }
 
 
