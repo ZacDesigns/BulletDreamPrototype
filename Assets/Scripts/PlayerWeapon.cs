@@ -13,6 +13,7 @@ public class PlayerWeapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //ableShoot variable is set to true, timePassed is set to 0
         ableShoot = true;
         timePassed = 0.0f;
     }
