@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class RetryGame : MonoBehaviour
 {
-
+    //Reloads the scene when the function is ran
     public void buttonRetry()
     {
         SceneManager.LoadScene(1);

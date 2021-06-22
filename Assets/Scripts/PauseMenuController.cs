@@ -3,23 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PauseMenuController : MonoBehaviour
-{
+{    //Variable and Game Object References
     public GameObject pauseScreen;
-
     public GameManager gameManager;
     public PlayerController playerController;
-
     [HideInInspector]
     public static bool isPaused = false;
 
-    void Start()
-    {
-
-    }
-
-
+    // Update is called once per frame
     void Update()
     {
+        //If the game isn't in game over state, checks if escape is pressed and if the game is already paused
         if (GameManager.gameIsOver == false)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -35,7 +29,7 @@ public class PauseMenuController : MonoBehaviour
             }
         }
     }
-
+    //Unpauses the game
     void Resume()
     {
         pauseScreen.SetActive(false);
@@ -44,7 +38,7 @@ public class PauseMenuController : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
-
+    //Pauses the game
     void Pause()
     {
         pauseScreen.SetActive(true);

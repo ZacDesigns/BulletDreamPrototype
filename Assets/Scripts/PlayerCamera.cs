@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
+    //Variable and Component References
     private PauseMenuController pauseController;
     private PlayerController playerController;
-
-
-
     public float mouseSensitivity = 10f;
     public Transform player;
     private float x = 0;
     private float y = 0;
 
 
+    // Start is called before the first frame update
     void Start()
     {
+        //Finding game object called Canvas
         pauseController = GameObject.Find("Canvas").GetComponent<PauseMenuController>();
 
         //Remove cursor
@@ -27,7 +27,9 @@ public class PlayerCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Finding game object called Player
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+        //Checks if the game is not paused and the player is not dead, then runs the function
        if (!PauseMenuController.isPaused && !GameManager.gameIsOver)
         {
             //Mouse look 

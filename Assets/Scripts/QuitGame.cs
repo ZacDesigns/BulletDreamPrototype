@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class QuitGame : MonoBehaviour
 {
+    //Closes the application when the function is run
     public void buttonQuit()
     {
         Application.Quit();
