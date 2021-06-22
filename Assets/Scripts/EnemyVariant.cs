@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class EnemyVariant : MonoBehaviour
 {
     public float speed;
-
     public float playerDetected = 12;
     public GameObject player;
     private NavMeshAgent navAgent;
