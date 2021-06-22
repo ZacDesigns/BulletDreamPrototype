@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
         if (gameIsOver == false)
         {
             gameIsOver = true;
-            Debug.Log("Player Dead!!");
             GameOverScreen.SetActive(true);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
