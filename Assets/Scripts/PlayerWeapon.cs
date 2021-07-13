@@ -5,10 +5,18 @@ using UnityEngine;
 public class PlayerWeapon : MonoBehaviour
 {
     //Variable and Game Object References
+    public AudioSource ShootSound;
     public GameObject projectileObject;
     public float rateOfFire;
     private float timePassed;
     private bool ableShoot;
+
+    //Audio functions
+    public void PlayShootSound()
+    {
+        ShootSound.Play();
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +55,7 @@ public class PlayerWeapon : MonoBehaviour
         {
             //Instantiate Projectile Game Object and make it move forward
             Instantiate(projectileObject, transform.position, transform.rotation);
+            PlayShootSound();
         }
     }
 

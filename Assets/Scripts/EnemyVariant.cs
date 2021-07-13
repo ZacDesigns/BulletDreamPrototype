@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyVariant : MonoBehaviour
 {
     //Variable, Component and Game Object References
+    public AudioSource EnemyDie;
     public float speed;
     public float playerDetected = 12;
     public GameObject player;
