@@ -12,6 +12,13 @@ public class EnemyVariant : MonoBehaviour
     public GameObject player;
     private NavMeshAgent navAgent;
 
+    //Audio functions
+    public void PlayEnemyDie()
+    {
+        EnemyDie.Play();
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +53,7 @@ public class EnemyVariant : MonoBehaviour
     //Kill function which destroys the game object and adds 5 points to the variable scoreVal from the Score script
     public void Kill()
     {
+        PlayEnemyDie();
         Destroy(gameObject);
         Score.scoreVal += 5;
     }
