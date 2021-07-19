@@ -116,6 +116,7 @@ MonoBehaviour:
   speed: 5
   playerDetected: 1000
   player: {fileID: 0}
+  sfxLifetime: 1
 --- !u!54 &-196580503587917333
 Rigidbody:
   m_ObjectHideFlags: 0

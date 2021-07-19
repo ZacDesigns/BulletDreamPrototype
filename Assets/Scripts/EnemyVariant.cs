@@ -11,7 +11,7 @@ public class EnemyVariant : MonoBehaviour
     public float playerDetected = 12;
     public GameObject player;
     private NavMeshAgent navAgent;
-
+    public float sfxLifetime;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +48,7 @@ public class EnemyVariant : MonoBehaviour
     public void Kill()
     {
         GameObject sfxDeath = Instantiate(EnemyDie) as GameObject;
+        Destroy(sfxDeath, sfxLifetime);
         Destroy(gameObject);
         Score.scoreVal += 5;
     }
