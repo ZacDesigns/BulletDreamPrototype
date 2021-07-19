@@ -5,17 +5,11 @@ using UnityEngine;
 public class PlayerWeapon : MonoBehaviour
 {
     //Variable and Game Object References
-    public AudioSource ShootSound;
+    private AudioSource Weapon;
     public GameObject projectileObject;
     public float rateOfFire;
     private float timePassed;
     private bool ableShoot;
-
-    //Audio functions
-    public void PlayShootSound()
-    {
-        ShootSound.Play();
-    }
 
 
     // Start is called before the first frame update
@@ -24,6 +18,7 @@ public class PlayerWeapon : MonoBehaviour
         //ableShoot variable is set to true, timePassed is set to 0
         ableShoot = true;
         timePassed = 0.0f;
+        Weapon = GameObject.Find("Weapon").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -55,7 +50,7 @@ public class PlayerWeapon : MonoBehaviour
         {
             //Instantiate Projectile Game Object and make it move forward
             Instantiate(projectileObject, transform.position, transform.rotation);
-            PlayShootSound();
+            Weapon.PlayOneShot(Weapon.clip);
         }
     }
 
